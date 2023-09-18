@@ -1,6 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import tw from 'twrnc';
+import { Bars3CenterLeftIcon } from 'react-native-heroicons/solid'
 
 //screen imports
 import HomeScreen from './screens/HomeScreen';
@@ -31,9 +32,14 @@ export default function App() {
           options={{
             title: 'Home',
             headerStyle: {
-              backgroundColor: "#1e293b",
+              backgroundColor: "#0f172a",
             },
-            headerTitle: (props) => <LogoTitle {...props} />
+            headerTitle: (props) => <LogoTitle {...props} />,
+            headerRight: () => (
+              <TouchableOpacity>
+                <Bars3CenterLeftIcon size="30" color="white" />
+              </TouchableOpacity>
+            ),
           }}
         />
       </Stack.Navigator>
